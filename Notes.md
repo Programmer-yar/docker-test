@@ -1,5 +1,6 @@
 # Docker
 - A way to package software so that it can run on any OS
+- Can replace VM. Run different OS on top of a single OS
 
 ### Dockerfile
 - A blue print for building a docker image
@@ -24,13 +25,22 @@
 ### docker-compose
 - A tool used for running multiple docker containers at the same time.
 - `services` object contains keys and each key represents different containers.
-  - `web` key contains settings related to app container
+  - `web` key contains settings related to app **container**
     - `build: .` use this to point towards current working directory.
     - `ports:` contains port forwarding condition
-  - `db` key contains settings related to database container
+  - `db` key contains settings related to database **container**
 
 ### Commands
 - Get the list of all running containers on a system:
 	- `docker ps`
+- Start the containers listed in 'docker-compose.yml'
+  - `docker-compose up`
+  - Use this command in the directory containing docker-compose.yml
+- Check the port of the container
+  - `docker port <container_name> or <CONTAINER ID>`
+- Get the list of images on your system
+  -  `docker images`
 
-https://www.youtube.com/watch?v=gAkwW2tuIqE&t=58s
+
+## Basic concepts to advanced concepts docker
+[documentation link](https://github.com/docker/labs/tree/master/beginner/)
