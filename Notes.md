@@ -10,6 +10,7 @@
   `FROM python:3`
 - Add app source code to the image like cd into a directory:
   `WORKDIR /code`
+- `ENV PYTHONUNBUFFERED=1` means that the python output is transmitted directly to the terminal without being buffered and that allows displaying the application’s output in real-time. It also means that there is no partial output in a buffer in case the python program fails.
 
 ### Image
 - A template for running docker container
@@ -29,6 +30,7 @@
     - `build: .` use this to point towards current working directory.
     - `ports:` contains port forwarding condition
   - `db` key contains settings related to database **container**
+  - `depends_on:` specifies that current service should be deployed only after the specified service under depends_on  
 
 ### Commands
 - Get the list of all running containers on a system:
